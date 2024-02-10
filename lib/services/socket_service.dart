@@ -20,7 +20,7 @@ class SocketService with ChangeNotifier {
   }
 
   _initConfig() {
-    
+
     // Dart client
     socket.on('connect', (_) {
       print('Conectado al Servidor');

@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          _showGraph(),
+          bandas.isNotEmpty ? _showGraph() : Container(),
           Expanded(
             child: ListView.builder(
                 itemCount: bandas.length,
@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _showGraph() {
-    Map<String, double> dataMap = Map();
+    Map<String, double> dataMap = {};
     bandas.forEach((band) {
       dataMap.putIfAbsent(band.name, () => band.votes.toDouble());
     });
